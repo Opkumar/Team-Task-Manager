@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import API from "../utils/api";
 import toast from 'react-hot-toast';
 import { Plus, ArrowLeft } from 'lucide-react';
 import clsx from 'clsx';
@@ -33,7 +34,7 @@ const memberTabs = [
 export default function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { API, user } = useAuth();
+  const {  user } = useAuth();
 
   const [project, setProject] = useState(null);
   const [tasks, setTasks] = useState([]);

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import API from "../utils/api";
 import toast from 'react-hot-toast';
 import { FolderPlus, Trash2, FolderOpen } from 'lucide-react';
 import Card from '../components/ui/Card';
@@ -13,7 +14,7 @@ import EmptyState from '../components/ui/EmptyState';
 import Skeleton from '../components/ui/Skeleton';
 
 export default function Projects() {
-  const { API, user } = useAuth();
+  const { user } = useAuth();
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);

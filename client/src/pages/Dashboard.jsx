@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import API from "../utils/api";
 import { FolderOpen, CheckCircle2, User, AlertTriangle, ArrowRight, ClipboardList, Shield } from 'lucide-react';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
@@ -21,7 +22,7 @@ const statusBarColors = {
 };
 
 export default function Dashboard() {
-  const { API, user } = useAuth();
+  const { user } = useAuth();
   const [stats, setStats] = useState(null);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
